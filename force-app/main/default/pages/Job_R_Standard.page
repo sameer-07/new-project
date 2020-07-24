@@ -1,0 +1,23 @@
+<apex:page standardController="Job__c">
+    <apex:form >
+    <apex:pageBlock >
+     <apex:pageBlockSection title="job form">
+        <apex:inputField value="{!Job__c.name}"/> 
+         <apex:inputField value="{!Job__c.Name__c}"/>
+         <apex:inputField value="{!Job__c.Description__c}"/>
+         <apex:inputField value="{!Job__c.Number_of_Positions__c}"/>
+          <apex:inputField value="{!Job__c.Expires_On__c}"/>
+          <apex:inputField value="{!Job__c.Active__c}"/>
+          <apex:inputField value="{!Job__c.Salary_Offered__c}"/>
+          <apex:inputField value="{!Job__c.Job_type__c}"/>
+          <apex:inputField value="{!Job__c.Required_Skills__c}"/>
+         
+         <apex:inputField value="{!Job__c.Qualification_Required__c}"/>
+          <apex:inputField value="{!Job__c.Certification_Required__c}"/>
+          <apex:inputField value="{!Job__c.Manager__c}"/>
+         
+      </apex:pageBlockSection>   
+     </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

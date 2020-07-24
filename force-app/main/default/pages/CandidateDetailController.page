@@ -1,0 +1,32 @@
+<apex:page controller="CandidateDetails">
+    <apex:form >
+         <!--   <apex:outputText ><h1>Select Job:</h1></apex:outputText>
+        <apex:inputText value="{!selectedJob}"/>
+        
+-->  
+        
+        <!--      <apex:selectList multiselect="false" size="1">
+<apex:selectOptions value="{!lstJobNames}">
+</apex:selectOptions>
+</apex:selectList>
+
+-->           
+        <apex:selectList value="{!selectedJob}" size="1">            	
+            <apex:selectOptions value="{!lstJobNames}"></apex:selectOptions>                     
+        </apex:selectList> 
+        
+        
+        <apex:commandButton value="Search" action="{!doSearch}"/>
+        
+        <apex:pageBlock title="CandidateDetails">
+            <apex:pageBlockTable value="{!candiList}" var="cand">         
+                <apex:column headerValue="FirstName" value="{!cand.First_Name__c}"/>
+                <apex:column headerValue="LastName" value="{!cand.Last_Name__c}"/>         
+                <apex:column headerValue="Email" value="{!cand.Email__c}"/>            
+                
+            </apex:pageBlockTable>    
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

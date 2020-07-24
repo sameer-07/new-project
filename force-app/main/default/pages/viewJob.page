@@ -1,0 +1,14 @@
+<apex:page standardController="Job__c">
+    <apex:tabPanel >
+        <apex:tab label="Details">
+            <apex:detail relatedList="false" title="true" />
+        </apex:tab>
+        
+        
+         <apex:tab label="candidates">
+            <apex:relatedList subject="{!Job__c}" list="candidate" />
+        </apex:tab>
+    </apex:tabPanel>
+    
+
+</apex:page>

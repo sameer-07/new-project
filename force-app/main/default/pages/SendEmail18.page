@@ -1,0 +1,18 @@
+<apex:page controller="cESend" >
+    <apex:pageBlock title="send email example.send email to the related contact email of the account">
+        <apex:pageBlockTable value="{!can}" var="c"> 
+            <apex:column headerValue="Name">{!c.Name}</apex:column>
+            <apex:column headerValue="Email">{!c.Email__c}</apex:column>
+        </apex:pageBlockTable><br/><br/>
+    
+        <apex:form >
+        <apex:outputLabel for="subject" value="subject"></apex:outputLabel>
+            <apex:inputText size="80" maxlength="80" id="subject"/><br/><br/>
+            <apex:outputLabel for="Body" value="Body" >:<br/></apex:outputLabel>
+            <apex:inputTextarea id="Body" cols="80" rows="8" /><br/><br/>
+
+        </apex:form>
+    </apex:pageBlock>
+    
+    
+</apex:page>

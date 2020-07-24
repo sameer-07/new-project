@@ -1,0 +1,67 @@
+<apex:page controller="customJob" tabStyle="Job__c">
+    
+    <apex:form id="frms" onmouseover="check()">
+        
+        <apex:pageBlock mode="edit">
+         <apex:image url="{!URLFOR($Resource.enzigma, 'enzigma.png')}" width="500" height="250" />
+     
+            
+       <apex:pageBlockSection title="job information">    
+       
+          
+         <apex:inputField value="{!Job.name}" id="name"/> 
+         <apex:inputField value="{!Job.Name__c}" id="namec"/>
+         <apex:inputField value="{!Job.Description__c}" id="Description"/>
+         <apex:inputField value="{!Job.Number_of_Positions__c}" id="Number_of_Positions"/>
+         <apex:inputField value="{!Job.Expires_On__c}" id="Expires_On"/>
+         <apex:inputField value="{!Job.Active__c}" id="Active"/>
+         <apex:inputField value="{!Job.Salary_Offered__c}" id="Salary_Offered"/>
+         <apex:inputField value="{!Job.Job_type__c}" id="Job_type"/>
+         <apex:inputField value="{!Job.Required_Skills__c}" id="Required_Skills"/>
+         <apex:inputField value="{!Job.Qualification_Required__c}" id="Qualification_Required"/>
+         <apex:inputField value="{!Job.Certification_Required__c}" id="Certification_Required"/>
+         <apex:inputField value="{!Job.Manager__c}" id="Manager"/>
+             <apex:commandButton action="{!save}" value="Save" id="theButton"/>
+              <apex:commandButton action="{!edit}" value="Edit" id="edit" />
+           
+           
+<script>
+         function check(){
+             
+            var name=document.getElementById('{!$Component.name}').value;
+              
+     
+         
+             var Number_of_Positions=document.getElementById('{!$Component.Number_of_Positions}').value;
+              var Expires_On=document.getElementById('{!$Component.Expires_On}').value;
+              var Active=document.getElementById('{!$Component.Active}').checked;
+              var Salary_Offered=document.getElementById('{!$Component.Salary_Offered}').value;
+              var Job_type=document.getElementById('{!$Component.Job_type}').value;
+              var Required_Skills=document.getElementById('{!$Component.Required_Skills}').value;
+              var Qualification_Required=document.getElementById('{!$Component.Qualification_Required}').value;
+              var Certification_Required=document.getElementById('{!$Component.Certification_Required}').value;
+             
+              var Manager=document.getElementById('{!$Component.Manager}').value;
+            
+
+    
+             if(name==""||Number_of_Positions==""||Expires_On==""||Active=="false"||Salary_Offered==""||Job_type==""||Required_Skills==""||Qualification_Required==""||Certification_Required=="")
+             {
+               document.getElementById('{!$Component.theButton}').disabled=true;
+                 }  
+             elses
+                 {
+              
+                     document.getElementById('{!$Component.theButton}').disabled = false;
+                 }
+             }
+   
+</script>    
+           
+           
+      </apex:pageBlockSection>
+   
+  
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<apex:component >
+    <apex:attribute name="job" type="sobject" required="true" description=""/>
+    <apex:attribute name="jobFields" type="string[]" required="true" description=""/>
+    
+    <apex:attribute name="records" type="sobject[]" required="true" description=""/>
+    <apex:attribute name="fields" type="string[]" required="true" description=""/>
+    <apex:pageBlock >
+        <table border="2" >
+            <thead>
+                <th>Name</th>
+                <th>No. Of Postions</th>
+                <th>Job Type</th>
+                <th>Manager Email</th>
+            </thead>
+            <tr var="job" value="{!job}">
+                <apex:repeat var="jobField" value="{!jobFields}">
+                    <td>{!job[jobField]}</td>
+                </apex:repeat> 
+            </tr>
+        </table>
+        <table border="2" >
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Job Name</th>
+                <th>Candidate Status</th>
+            </thead>
+            <apex:repeat var="item" value="{!records}">
+                <tr>
+                    <apex:repeat var="fieldItem" value="{!fields}">
+                        <td>{!item[fieldItem]}</td>
+                    </apex:repeat> 
+                </tr>
+            </apex:repeat> 
+        </table>
+    </apex:pageBlock>  
+</apex:component>

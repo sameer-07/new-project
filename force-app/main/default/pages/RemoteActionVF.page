@@ -1,0 +1,24 @@
+<apex:page controller="RemoteAction">
+    <script type = "text/javascript">
+  function getRemoteContact() {
+     Visualforce.remoting.Manager.invokeAction(
+            //Invoking controller action getcon
+            '{!$RemoteAction.RemoteAction.incresePos}',
+             
+            function(result, event){
+               //We can access the records through the parameter result
+               //event.status determines if there is error or not 
+               if(event.status){
+                   // document.getElementById('remoteContactId').innerHTML = 'Contact Name :- <br/><br/>';
+                   //for(a=0;a<result.length;a++){                        
+                   //     document.getElementById('remoteContactId').innerHTML +=  result[a].Name +'<br/>';                    
+                   // }                                       
+               }               
+            },
+            {escape: false, timeout:3000, buffer: false}
+        );
+      }
+
+    </script>
+    <button onclick="getRemoteContact()">increse jobs</button>
+</apex:page>

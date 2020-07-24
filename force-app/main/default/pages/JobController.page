@@ -1,0 +1,5 @@
+<apex:page controller="JobDetailCustom" >
+  <apex:repeat var="j" value="{!jobId}">
+    <c:demorelatedlistcomponent records="{!records}" fields="{!fields}" job="{!jobRecord}" jobFields="{!jobFields}"></c:demorelatedlistcomponent>
+	</apex:repeat>
+</apex:page>
